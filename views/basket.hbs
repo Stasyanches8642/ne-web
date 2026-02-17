@@ -1,0 +1,83 @@
+<section class="basket-description">
+    <h1><strong>Корзина</strong></h1>
+    <h3>Проверьте состав заказа перед оформлением:</h3>
+</section>
+<section class="basket-items">
+    <table>
+        <caption>Выбранные товары</caption>
+        <thead>
+            <tr><th>Блюдо</th><th>Количество</th><th>Сумма</th></tr>
+        </thead>
+        <tbody>
+            {{#each basketItems}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>
+                    <button>-</button>
+                    <p>{{this.quantity}}</p>
+                    <button>+</button>
+                </td>
+                <td>{{this.total}} руб</td>
+            </tr>
+            {{/each}}
+        </tbody>
+        <tfoot>
+            <tr><td colspan="2">ИТОГО:</td><td>{{basketTotal}} руб</td></tr>
+        </tfoot>
+    </table>
+</section>
+<section class="order-summary">
+    <table>
+        <caption>Сумма заказа:</caption>
+        <thead>
+            <tr><th>Товары ({{basketCount}})</th><th>Доставка</th><th>Итого</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>{{basketTotal}} руб</td><td>{{deliveryCost}} руб</td><td>{{orderTotal}} руб</td></tr>
+        </tbody>
+    </table>
+</section>
+<div class="delivery-payment-container">
+    <section class="delivery-info">
+        <h2>Доставка</h2>
+        <form>
+            <p>
+                <label for="delivery-address">Адрес доставки</label>
+                <input type="text" id="delivery-address" placeholder="Ул., д., кв.(опционально)" required>
+            </p>
+            <label for="delivery-hour">Время доставки</label>
+            <select id="delivery-hour" required>
+                <option value="">Часов</option>
+                <option>10</option><option>11</option><option>12</option><option>13</option>
+                <option>14</option><option>15</option><option>16</option><option>17</option>
+                <option>18</option><option>19</option><option>20</option><option>21</option><option>22</option>
+            </select>
+            <select id="delivery-minute" required>
+                <option value="">Минут</option>
+                <option>00</option><option>15</option><option>30</option><option>45</option>
+            </select>
+            <p>
+                <label for="delivery-comment">Комментарий к доставке</label>
+                <textarea id="delivery-comment" placeholder="Например: код домофона, этаж и т.д." rows="2" cols="25"></textarea>
+            </p>
+            <button type="submit">Сохранить адрес</button>
+        </form>
+    </section>
+    <section class="payment-info">
+        <h2>Выберите способ оплаты</h2>
+        <form>
+            <p>
+                <label><input type="radio" name="payment-method" value="Card" checked> 💳 Оплата банковской картой онлайн</label>
+                <label><input type="radio" name="payment-method" value="Cash"> 💵 Оплата наличными при получении</label>
+                <label><input type="radio" name="payment-method" value="Pay"> 📱 Бесконтактная оплата (Apple Pay/Google Pay)</label>
+            </p>
+            <h2>Заполните данные карты</h2>
+            <p><label for="card-number">Номер карты</label><input type="number" id="card-number" placeholder="0000 0000 0000 0000" required></p>
+            <p><label for="card-holder">Имя владельца</label><input type="text" id="card-holder" placeholder="IVAN IVANOV" required></p>
+            <p><label for="card-expiry">Срок действия</label><input type="text" id="card-expiry" placeholder="MM/ГГ" required></p>
+            <p><label for="card-cvv">CVV код</label><input type="password" id="card-cvv" placeholder="000" required></p>
+            <button type="submit">Сохранить способ оплаты</button>
+        </form>
+    </section>
+</div>
+<button class="set-an-order">Оформить заказ</button>

@@ -1,0 +1,9 @@
+{{#if user}}
+<div class="session-info">
+    <span class="session-greeting">Вы вошли как <strong>{{user.name}}</strong></span>
+    <a href="/profile" class="button {{#if (eq activePage 'profile')}}active-page{{/if}}">Профиль</a>
+    <a href="/?auth=false" class="button">Выйти</a>
+</div>
+{{else}}
+<a href="/authorization" class="button {{#if (eq activePage 'authorization')}}active-page{{/if}}">Авторизация</a>
+{{/if}}

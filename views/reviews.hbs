@@ -1,0 +1,50 @@
+<section class="guests-section">
+    <h2>Самые частые гости ресторана</h2>
+    <button id="load-guests-btn" class="load-guests-button">Загрузить список гостей</button>
+    <div id="guests-preloader" class="guests-preloader" style="display: none;">
+        <div class="guests-spinner"></div>
+        <p>Загрузка списка гостей...</p>
+    </div>
+    <div id="guests-error" class="guests-error-message" style="display: none;">
+        <h3 class="error-title"></h3>
+        <p class="error-text"></p>
+        <button class="retry-button">Попробовать снова</button>
+    </div>
+    <template id="guest-template">
+        <div class="guest-item">
+            <span class="guest-number"></span>
+            <span class="guest-name"></span>
+        </div>
+    </template>
+    <div id="guests-container" class="guests-container"></div>
+</section>
+
+<div class="reviews-grid">
+    <section class="review-form-section">
+        <h2>Оставить отзыв</h2>
+        <form id="reviewForm">
+            <label>Имя:<input type="text" name="name" required minlength="2"></label>
+            <label>Оценка (1–5):<input type="number" name="rating" min="1" max="5" required></label>
+            <label>Дата визита:<input type="date" name="visitDate" required></label>
+            <label>Комментарий:
+                <textarea name="comment" required minlength="3" placeholder="Опишите качество еды, обслуживания и общие впечатления"></textarea>
+            </label>
+            <button type="submit">Добавить отзыв</button>
+        </form>
+    </section>
+    <img src="/htdocs/img/good_review.jpg" alt="Лайк" class="restaurant-photo">
+</div>
+
+<section class="reviews-list-section">
+    <h2>Все отзывы</h2>
+    <div id="reviewTemplate" class="review-card">
+        <div class="review-header">
+            <h3 class="review-name"></h3>
+            <span class="review-rating"></span>
+        </div>
+        <p class="review-comment"></p>
+        <p class="review-visit"></p>
+        <button class="edit-btn">Редактировать</button>
+    </div>
+    <div id="reviewsContainer"></div>
+</section>

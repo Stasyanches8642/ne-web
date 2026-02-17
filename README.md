@@ -5,3 +5,11 @@
 ## Немножко описания:
 
 [Мой проект](https://m3314-filevskaya-backend.onrender.com/major.html) включает в себя сайт ресторана Blossom, на котором можно забронировать зал, заказать еду онлайн, оставить отзыв.
+
+## Для проверки работоспособности шаблонизаторов:
+
+```
+http://localhost:3000/
+http://localhost:3000/?auth=true
+http://localhost:3000/?auth=false
+```

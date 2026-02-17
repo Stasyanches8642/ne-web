@@ -1,0 +1,17 @@
+<section class="catalog-description">
+    <h1>Каталог блюд нашего ресторана</h1>
+</section>
+<ul class="dish-categories">
+    <li>
+        <section class="menu">
+            {{#each menuSections}}
+            <h2 class="section-name">{{this.title}}</h2>
+            <ul>
+                {{#each this.items}}
+                {{> dish-card}}
+                {{/each}}
+            </ul>
+            {{/each}}
+        </section>
+    </li>
+</ul>

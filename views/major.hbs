@@ -1,0 +1,98 @@
+<div class="three-one-container">
+    <article class="major-description">
+        <h2 class="section-name" lang="en">Blossom</h2>
+        <p>Сеть ресторанов с уникальным оформлением залов живыми цветами от нашего партнёра <span lang="en">"Blossom-flowers"</span>.</p>
+        <p>Насладитесь изысканными блюдами от лучших поваров, погрузившись в атмосферу цветущего сада или тропического леса.</p>
+        <blockquote>
+            <q>Нет любви более искренней, чем любовь к еде</q>
+            <cite>— Бернард Шоу</cite>
+        </blockquote>
+    </article>
+    <section class="addresses">
+        <h3>Наши филиалы:</h3>
+        <ul>
+            <li class="address-item">
+                <a href="/booking" lang="en">Blossom - Garden of Eden</a>
+                <p>СПБ, ул.Глинки, д.2</p><p>м. Сенная площадь</p><p>м. Адмиралтейская</p>
+                <p>Телефон: +7(123)456-78-90</p>
+            </li>
+            <li class="address-item">
+                <a href="/booking" lang="en">Blossom - Rainforest</a>
+                <p>СПБ, Каменноостровский просп., д.47</p><p>м. Петроградская</p>
+                <p>Телефон: +7(123)456-78-91</p>
+            </li>
+            <li class="address-item">
+                <a href="/booking" lang="en">Blossom - Desert Rose</a>
+                <p>СПБ, наб. реки Смоленки, д.33</p><p>м. Приморская</p>
+                <p>Телефон: +7(123)456-78-92</p>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<section class="catalog-examples">
+    <h2 class="section-name">Каталог</h2>
+    <ul>
+        {{#each featuredDishes}}
+        <li class="dish-item">
+            <img src="/htdocs/img/meals/{{this.image}}" alt="Фото блюда '{{this.name}}'">
+            <p class="dish-name">{{this.name}}</p>
+            <p>{{this.description}}</p>
+            <p>{{this.ingredients}}</p>
+            {{#if this.vegetarian}}<p><em>Подходит для вегетарианцев.</em></p>{{/if}}
+            <p><strong>{{this.price}}</strong></p>
+        </li>
+        {{/each}}
+    </ul>
+    <aside class="catalog-button">
+        <a href="/catalog" class="button">ПЕРЕЙТИ В КАТАЛОГ</a>
+    </aside>
+</section>
+
+<div class="faq-reception-container">
+    <section class="faq">
+        <h3>FAQ</h3>
+        <ol class="faq-list">
+            <li class="faq-item">
+                <h4>Есть ли у ресторана доставка?</h4>
+                <p>Да. Вы можете оформить заказ через раздел <a href="/catalog">"Каталог"</a>.</p>
+            </li>
+            <li class="faq-item">
+                <h4>Можно ли забронировать зал для мероприятия?</h4>
+                <p>Да. Вы можете забронировать зал через раздел <a href="/booking">"Бронирование"</a>.</p>
+            </li>
+            <li class="faq-item">
+                <h4>Создана ли у ресторана инфраструктура для маломобильных людей?</h4>
+                <p>Да. В ресторане имеются пандусы, кнопки вызова помощи, специализированные санузлы, заниженные столы и обученный персонал.</p>
+            </li>
+        </ol>
+    </section>
+    <aside class="reception-photo">
+        <img src="/htdocs/img/halls/Reception.png" alt="Фото ресепшена ресторана">
+    </aside>
+</div>
+
+<section class="delivery-info">
+    <h2>ИНФОРМАЦИЯ ПО ДОСТАВКЕ</h2>
+    <ol class="delivery-info-list">
+        <li class="delivery-info-item">
+            <img src="/htdocs/img/delivery/food_basket.jpg" alt="Фото продуктовой корзины">
+            <p>Добавьте желаемые блюда в корзину.</p>
+            <p>Выберите время и адрес для получения заказа.</p>
+            <sup>*Доставка осуществляется только по СПБ и только в текущий день.</sup>
+        </li>
+        <li class="delivery-info-item">
+            <img src="/htdocs/img/delivery/card.jpg" alt="Фото банковской карты">
+            <p>Выберите способ оплаты.</p>
+            <p>При выборе оплаты на сайте привяжите карту, используя реквизиты.</p>
+        </li>
+        <li class="delivery-info-item">
+            <img src="/htdocs/img/delivery/cook.jpg" alt="Фото повара">
+            <p>Ваш заказ с любовью приготовят к указанному времени наши повара.</p>
+        </li>
+        <li class="delivery-info-item">
+            <img src="/htdocs/img/delivery/car.jpg" alt="Фото грузовой машины">
+            <p>Курьер аккуратно привезёт заказ на указанный вами адрес точно в срок.</p>
+        </li>
+    </ol>
+</section>
