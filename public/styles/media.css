@@ -1,0 +1,278 @@
+﻿/* МАЛЕНЬКИЕ НОУТБУКИ (до 1366px) */
+
+@media screen and (max-width: 1366px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    header {
+        padding: 8px 15px;
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    header form {
+        max-width: 300px;
+    }
+
+    header nav ul {
+        gap: 5px;
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+}
+
+/* ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ (до 1024px) */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        font-size: 14px;
+        padding-top: 70px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 5px 10px;
+    }
+
+    header img {
+        height: 45px;
+        align-self: center;
+    }
+
+    header form {
+        max-width: 100%;
+        order: 3;
+    }
+
+    header nav {
+        order: 2;
+        width: 100%;
+    }
+
+    header nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+
+    header > .button {
+        order: 4;
+        align-self: center;
+        margin-top: 5px;
+    }
+
+    .three-one-container {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-examples {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-button {
+        display: none;
+    }
+
+    .catalog-examples::after {
+        content: '';
+        grid-column: 1;
+    }
+
+    .menu > ul {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery-info-list {
+        grid-template-columns: 1fr;
+    }
+
+    .halls-selection {
+        flex-direction: column;
+    }
+
+    .schedule-container nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .basket-items tr {
+        grid-template-columns: 1fr;
+    }
+
+    .basket-items td {
+        text-align: center;
+    }
+
+    .order-summary tr {
+        grid-template-columns: 1fr;
+    }
+
+    footer nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .basement {
+        font-size: 0.75em;
+    }
+}
+
+/* FULL HD (1367px - 1920px) - БАЗОВЫЕ СТИЛИ */
+
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    main {
+        max-width: 1400px;
+    }
+
+    .reception-photo,
+    main > img,
+    .catalog-button {
+        display: block;
+    }
+}
+
+/* 2K И ВЫШЕ (от 1921px) */
+
+@media screen and (min-width: 1921px) {
+
+    body {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2.2em;
+    }
+
+    main {
+        max-width: 1800px;
+        padding: 15px 30px;
+    }
+
+    header {
+        padding: 15px 30px;
+    }
+
+    header img {
+        height: 80px;
+    }
+
+    header form {
+        max-width: 500px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .menu > ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .catalog-examples {
+        grid-template-columns: 1fr 1fr 1fr 1fr 0.3fr;
+    }
+
+    .dish-item img {
+        height: 250px;
+    }
+
+    .delivery-info-list {
+        gap: 25px;
+    }
+
+    .delivery-info img {
+        width: 150px;
+        height: 150px;
+    }
+
+    footer.contacts {
+        padding: 20px 30px;
+        gap: 25px;
+    }
+
+    footer img.contacts {
+        width: 90px;
+        height: 90px;
+    }
+
+    section {
+        padding: 30px;
+        margin: 35px 0;
+    }
+
+    article {
+        padding: 25px;
+        margin: 25px 0;
+    }
+}
+
+/* Скрытие элементов на печать */
+@media print {
+    header,
+    footer,
+    .button,
+    button,
+    form {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+/* Оптимизация для высоких экранов */
+@media screen and (min-height: 1200px) {
+    section {
+        margin: 40px 0;
+    }
+}
+
+/* Адаптация для планшетов в альбомной ориентации */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .three-one-container {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .menu > ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .catalog-examples {
+        grid-template-columns: 1fr 1fr 0.2fr;
+    }
+}

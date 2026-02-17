@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title lang="en">Blossom</title>
+    <meta name="description" content="Официальный сайт ресторана Blossom.">
+    <meta name="keywords" content="ресторан, банкетный зал, блюда, купить еду, забронировать столик">
+    <meta name="author" content="Филевская Анастасия">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/authorization.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <script src="scripts/common.js"></script>
+</head>
+<body>
+    <header>
+        <a href="major.html"><img src="htdocs/img/logos/Logo.png" alt="Логотип"></a>
+        <form action="/search" method="get">
+            <label><input type="text" name="sp" placeholder="Поиск..."><span class="sr-only">Поиск по сайту</span></label>
+            <button type="submit">Найти</button>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="catalog.html" class="button">Каталог</a></li>
+                <li><a href="basket.html" class="button">Корзина</a></li>
+                <li><a href="booking.html" class="button">Бронирование</a></li>
+                <li><a href="reviews.html" class="button">Отзывы</a></li>
+            </ul>
+        </nav>
+        <a href="authorization.html" class="button">Авторизация</a>
+    </header>
+    <main>
+        <div class="authorization-container">
+            <form class="authorization-form">
+                <label>Введите номер телефона:<input type="tel" placeholder="+79876543210"></label>
+                <label>Введите код из SMS:<input type="number" minlength="6" maxlength="6" placeholder="000000"></label>
+                <button>Проверить данные</button>
+            </form>
+        </div>
+    </main>
+    <footer class="contacts">
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://t.me/rest_blossom"><img src="htdocs/img/logos/telegram.png" alt="Значок-ссылка на Телеграм" class="contacts"></a>
+                </li>
+                <li>
+                    <a href="https://vk.com/rest.blossom"><img src="htdocs/img/logos/vk.png" alt="Значок-ссылка на ВКонтакте" class="contacts"></a>
+                </li>
+                <li>
+                    <a href="mailto:rest_blossom@mail.ru"><img src="htdocs/img/logos/mail.png" alt="Значок-ссылка на электронную почту" class="contacts"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/rest_blossom"><img src="htdocs/img/logos/instagram.png" alt="Значок-ссылка на Инстаграм" class="contacts"></a>
+                </li>
+            </ul>
+        </nav>
+        <section class="opening-hours">
+            <p><strong>Часы работы ресторана:</strong></p>
+            <p><em>ПН-ПТ:</em>10:00-22:00</p>
+            <p><em>СБ-ВС:</em>8:00-00:00</p>
+        </section>
+        <p>Телефон головного офиса: +7(123)456-78-99</p>
+        <p lang="en" class="basement">Copyright &copy; 2025 "Blossom". All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+﻿.booking-description {
+    background-color: var(--beige-color);
+    border: 1px solid var(--dark-green-color);
+    box-shadow: 0 3px 6px rgba(53, 64, 36, 0.4);
+}
+
+.addresses ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.addresses {
+    background-color: var(--cafe-noir-color);
+    font-size: 12px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.addresses p, h3 {
+    margin: 3px 0;
+}
+
+.address-item {
+    padding: 8px;
+    background-color: var(--light-green-color);
+    border: 4px ridge var(--beige-color);
+    border-radius: 8px;
+    list-style: none;
+    flex: 1 1 200px;
+    max-width: 280px;
+    text-align: center;
+}
+
+.address-item img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.booking-info {
+    text-align: center;
+    background-image: url('../htdocs/img/backgrounds/for_booking_info.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid var(--cafe-noir-color);
+}
+
+.booking-info h2,
+.booking-info p,
+.booking-info ins,
+.booking-info sup,
+.booking-info ul,
+.booking-info li {
+    text-align: center;
+}
+
+.booking-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.booking-info li {
+    margin: 8px 0;
+}
+
+.schedule-container {
+    padding: 15px;
+    background-color: var(--bone-color);
+    border-radius: 8px;
+}
+
+.schedule-container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.halls-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    border-top: 4px solid var(--cafe-noir-color);
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.4)
+    ), url('../htdocs/img/backgrounds/narrow_strip_decoration.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.halls-selection button {
+    margin: 0;
+    padding: 10px 16px;
+    background-color: var(--beige-color);
+    color: var(--dark-green-color);
+    border: 2px solid var(--light-green-color);
+}
+
+.halls-selection button:hover {
+    background-color: var(--light-green-color);
+    color: var(--bone-color);
+}
+
+.info-reservation {
+    margin: 15px 0;
+    padding: 12px;
+    background-color: var(--beige-color);
+    border: 2px solid var(--dark-green-color);
+    border-radius: 6px;
+    font-weight: 500;
+}

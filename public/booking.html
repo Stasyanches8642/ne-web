@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title lang="en">Blossom</title>
+  <meta name="description" content="Официальный сайт ресторана Blossom.">
+  <meta name="keywords" content="ресторан, банкетный зал, блюда, купить еду, забронировать столик">
+  <meta name="author" content="Филевская Анастасия">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/booking.css">
+  <link rel="stylesheet" href="styles/media.css">
+  <script src="scripts/common.js"></script>
+</head>
+<body>
+<header>
+  <a href="major.html"><img src="htdocs/img/logos/Logo.png" alt="Логотип"></a>
+  <form action="/search" method="get">
+    <label><input type="text" name="sp" placeholder="Поиск..."><span class="sr-only">Поиск по сайту</span></label>
+    <button type="submit">Найти</button>
+  </form>
+  <nav>
+    <ul>
+      <li><a href="catalog.html" class="button">Каталог</a></li>
+      <li><a href="basket.html" class="button">Корзина</a></li>
+      <li><a href="booking.html" class="button">Бронирование</a></li>
+      <li><a href="reviews.html" class="button">Отзывы</a></li>
+    </ul>
+  </nav>
+  <a href="authorization.html" class="button">Авторизация</a>
+</header>
+<main>
+  <article class="booking-description">
+    <p>
+      В нашем ресторане вы можете забронировать себе один из трех залов для проведения мероприятия.
+    </p>
+    <p>
+      Проведите незабываемую свадьбу в атмосфере абсолютной гармонии и единения с природой в зале Райского Сада
+      или устройте праздник своему ребёнку в стиле Древнего Египта в зале Розы Пустыни, или организуйте
+      корпоратив на восьмое марта женской половине коллектива посреди благоухающего Тропического леса.
+    </p>
+    <p>
+      Вам решать, где провести лучший праздник в вашей жизни, но мы поможем!
+    </p>
+  </article>
+  <section class="addresses">
+    <h3>Наши залы, доступные для бронирования:</h3>
+    <ul>
+      <li class="address-item">
+        <img src="htdocs/img/halls/Garden_Of_Eden_Hole.png" alt="Зал 'Райский сад'">
+        <h4 lang="en">Blossom - Garden of Eden</h4>
+        <p>СПБ, ул.Глинки, д.2</p>
+        <p>м. Сенная площадь</p>
+        <p>м. Адмиралтейская</p>
+        <p>Телефон: +7(123)456-78-90</p>
+      </li>
+      <li class="address-item">
+        <img src="htdocs/img/halls/Rainforest_Hole.png" alt="Зал 'Тропический лес'">
+        <h4 lang="en">Blossom - Rainforest</h4>
+        <p>СПБ, Каменноостровский просп., д.47</p>
+        <p>м. Петроградская</p>
+        <p>Телефон: +7(123)456-78-91</p>
+      </li>
+      <li class="address-item">
+        <img src="htdocs/img/halls/Desert_Rose_Hole.png" alt="Зал 'Райский сад'">
+        <h4 lang="en">Blossom - Desert Rose</h4>
+        <p>СПБ, наб. реки Смоленки, д.33</p>
+        <p>м. Приморская</p>
+        <p>Телефон: +7(123)456-78-92</p>
+      </li>
+    </ul>
+  </section>
+  <section class="booking-info">
+    <h2>
+      Информация по бронированию:
+    </h2>
+    <p>
+      Бронирование зала возможно не позднее чем за 3 дня до мероприятия.
+    </p>
+    <ins>Стоимость:</ins>
+    <ul>
+      <li>
+        <p>Утром (10:00-16:00) или вечером (16:00-22:00) - 5000 руб.</p>
+      </li>
+      <li>
+        <p>Полный день - 10000 руб.<p>
+      </li>
+    </ul>
+    <sup>*Стоимость аренды без учёта еды и напитков.</sup>
+  </section>
+  <section class="schedule">
+    <div class="halls-selection">
+      <h1>Выберите зал:</h1>
+      <button>Blossom - Garden of Eden</button>
+      <button>Blossom - Rainforest</button>
+      <button>Blossom - Desert</button>
+    </div>
+    <section class="schedule-container">
+      <nav>
+        <button>&lt; Предыдущий месяц</button>
+        <p>Сентябрь 2025</p>
+        <button>Следующий месяц &gt;</button>
+      </nav>
+      <table>
+        <thead>
+          <tr>
+            <th>ПН</th>
+            <th>ВТ</th>
+            <th>СР</th>
+            <th>ЧТ</th>
+            <th>ПТ</th>
+            <th>СБ</th>
+            <th>ВС</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Внутренности сделаны в JavaScript -->
+        </tbody>
+      </table>
+    </section>
+    <div class="info-reservation">
+      <p>Выбранная дата: </p>
+      <p>Выбранный зал: Blossom - Garden of Eden</p>
+    </div>
+  </section>
+  <form action="" method="get">
+    <p>
+      <label for="surname">Фамилия:</label>
+      <input type="text" id="surname" required>
+    </p>
+    <p>
+      <label for="name">Имя:</label>
+      <input type="text" id="name" required>
+    </p>
+    <p>
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" required>
+    </p>
+    <p>
+      <label for="email" lang="en">Email:</label>
+      <input type="email" id="email" required>
+    </p>
+    <p>
+      <label for="time">Время:</label>
+      <select id="time" required>
+        <option value="">Выберите время</option>
+        <option value="morning">10:00-16:00</option>
+        <option value="evening">16:00-22:00</option>
+        <option value="full">10:00-22:00 (Полный день)</option>
+      </select>
+    </p>
+    <p>
+      <label for="guests">Количество гостей:</label>
+      <input type="number" id="guests" min="1" required>
+    </p>
+    <button type="submit">Забронировать</button>
+  </form>
+</main>
+<footer class="contacts">
+  <nav>
+    <ul>
+      <li>
+        <a href="https://t.me/rest_blossom"><img src="htdocs/img/logos/telegram.png" alt="Значок-ссылка на Телеграм" class="contacts"></a>
+      </li>
+      <li>
+        <a href="https://vk.com/rest.blossom"><img src="htdocs/img/logos/vk.png" alt="Значок-ссылка на ВКонтакте" class="contacts"></a>
+      </li>
+      <li>
+        <a href="mailto:rest_blossom@mail.ru"><img src="htdocs/img/logos/mail.png" alt="Значок-ссылка на электронную почту" class="contacts"></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/rest_blossom"><img src="htdocs/img/logos/instagram.png" alt="Значок-ссылка на Инстаграм" class="contacts"></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="opening-hours">
+    <p><strong>Часы работы ресторана:</strong></p>
+    <p><em>ПН-ПТ:</em>10:00-22:00</p>
+    <p><em>СБ-ВС:</em>8:00-00:00</p>
+  </section>
+  <p>Телефон головного офиса: +7(123)456-78-99</p>
+  <p lang="en" class="basement">Copyright &copy; 2025 "Blossom". All rights reserved.</p>
+</footer>
+</body>
+</html>

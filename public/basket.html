@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title lang="en">Blossom</title>
+  <meta name="description" content="Официальный сайт ресторана Blossom.">
+  <meta name="keywords" content="ресторан, банкетный зал, блюда, купить еду, забронировать столик">
+  <meta name="author" content="Филевская Анастасия">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/basket.css">
+  <link rel="stylesheet" href="styles/media.css">
+  <script src="scripts/common.js"></script>
+</head>
+<body>
+<header>
+  <a href="major.html"><img src="htdocs/img/logos/Logo.png" alt="Логотип"></a>
+  <form action="/search" method="get">
+    <label><input type="text" name="sp" placeholder="Поиск..."><span class="sr-only">Поиск по сайту</span></label>
+    <button type="submit">Найти</button>
+  </form>
+  <nav>
+    <ul>
+      <li><a href="catalog.html" class="button">Каталог</a></li>
+      <li><a href="basket.html" class="button">Корзина</a></li>
+      <li><a href="booking.html" class="button">Бронирование</a></li>
+      <li><a href="reviews.html" class="button">Отзывы</a></li>
+    </ul>
+  </nav>
+  <a href="authorization.html" class="button">Авторизация</a>
+</header>
+<main>
+  <section class="basket-description">
+    <h1><strong>Корзина</strong></h1>
+    <h3>Проверьте состав заказа перед оформлением:</h3>
+  </section>
+  <section class="basket-items">
+    <table>
+      <caption>Выбранные товары</caption>
+      <thead>
+      <tr>
+        <th>Блюдо</th>
+        <th>Количество</th>
+        <th>Сумма</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Грибной крем-суп в хлебной тарелке</td>
+        <td>
+          <button>-</button>
+          <p>1</p>
+          <button>+</button>
+        </td>
+        <td>375 руб</td>
+      </tr>
+      <tr>
+        <td>Салат Цезарь</td>
+        <td>
+          <button>-</button>
+          <p>2</p>
+          <button>+</button>
+        </td>
+        <td>900 руб</td>
+      </tr>
+      <tr>
+        <td>Белое вино "Sante Rive Soave" (бутылка - 750 мл)</td>
+        <td>
+          <button>-</button>
+          <p>1</p>
+          <button>+</button>
+        </td>
+        <td>2000 руб</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="2">ИТОГО:</td>
+        <td>3275 руб</td>
+      </tr>
+      </tfoot>
+    </table>
+  </section>
+  <section class="order-summary">
+    <table>
+      <caption>Сумма заказа:</caption>
+      <thead>
+      <tr>
+        <th>Товары (4)</th>
+        <th>Доставка</th>
+        <th>Итого</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>3275 руб</td>
+        <td>200 руб</td>
+        <td>3475 руб</td>
+      </tr>
+    </table>
+  </section>
+  <div class="delivery-payment-container">
+    <section class="delivery-info">
+      <h2>Доставка</h2>
+      <form>
+        <p>
+          <label for="delivery-address">Адрес доставки</label>
+          <input type="text" id="delivery-address" placeholder="Ул., д., кв.(опционально)" required>
+        </p>
+        <label for="delivery-hour">Время доставки</label>
+        <select id="delivery-hour" required>
+          <option value="">Часов</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+        </select>
+        <select id="delivery-minute" required>
+          <option value="">Минут</option>
+          <option value="00">00</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+        </select>
+        <p>
+          <label for="delivery-comment">Комментарий к доставке</label>
+          <textarea id="delivery-comment" placeholder="Например: код домофона, этаж и т.д." rows="2" cols="25"></textarea>
+        </p>
+        <button type="submit">Сохранить адрес</button>
+      </form>
+    </section>
+    <section class="payment-info">
+      <h2>Выберите способ оплаты</h2>
+      <form>
+        <p>
+          <label>
+            <input type="radio" name="payment-method" value="Card" checked>
+            💳
+            Оплата банковской картой онлайн
+          </label>
+          <label>
+            <input type="radio" name="payment-method" value="Cash">
+            💵
+            Оплата наличными при получении
+          </label>
+          <label>
+            <input type="radio" name="payment-method" value="Pay">
+            📱
+            Бесконтактная оплата (Apple Pay/Google Pay)
+          </label>
+        </p>
+        <h2>Заполните данные карты</h2>
+        <p>
+          <label for="card-number">Номер карты</label>
+          <input type="number" id="card-number" placeholder="0000 0000 0000 0000" required>
+        </p>
+        <p>
+          <label for="card-holder">Имя владельца</label>
+          <input type="text" id="card-holder" placeholder="IVAN IVANOV" required>
+        </p>
+        <p>
+          <label for="card-expiry">Срок действия</label>
+          <input type="text" id="card-expiry" placeholder="MM/ГГ" required>
+        </p>
+        <p>
+          <label for="card-cvv">CVV код</label>
+          <input type="password" id="card-cvv" placeholder="000" required>
+        </p>
+        <button type="submit">Сохранить способ оплаты</button>
+      </form>
+    </section>
+  </div>
+  <button class="set-an-order">Оформить заказ</button>
+</main>
+<footer class="contacts">
+  <nav>
+    <ul>
+      <li>
+        <a href="https://t.me/rest_blossom"><img src="htdocs/img/logos/telegram.png" alt="Значок-ссылка на Телеграм" class="contacts"></a>
+      </li>
+      <li>
+        <a href="https://vk.com/rest.blossom"><img src="htdocs/img/logos/vk.png" alt="Значок-ссылка на ВКонтакте" class="contacts"></a>
+      </li>
+      <li>
+        <a href="mailto:rest_blossom@mail.ru"><img src="htdocs/img/logos/mail.png" alt="Значок-ссылка на электронную почту" class="contacts"></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/rest_blossom"><img src="htdocs/img/logos/instagram.png" alt="Значок-ссылка на Инстаграм" class="contacts"></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="opening-hours">
+    <p><strong>Часы работы ресторана:</strong></p>
+    <p><em>ПН-ПТ:</em>10:00-22:00</p>
+    <p><em>СБ-ВС:</em>8:00-00:00</p>
+  </section>
+  <p>Телефон головного офиса: +7(123)456-78-99</p>
+  <p lang="en" class="basement">Copyright &copy; 2025 "Blossom". All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title lang="en">Blossom</title>
+    <meta name="description" content="Официальный сайт ресторана Blossom.">
+    <meta name="keywords" content="ресторан, банкетный зал, еда в Питере, купить еду, забронировать столик">
+    <meta name="author" content="Филевская Анастасия">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/major.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <script src="scripts/common.js"></script>
+</head>
+<body>
+<header>
+    <a href="major.html"><img src="htdocs/img/logos/Logo.png" alt="Логотип"></a>
+    <form action="/search" method="get">
+        <label><input type="text" name="sp" placeholder="Поиск..."><span class="sr-only">Поиск по сайту</span></label>
+        <button type="submit">Найти</button>
+    </form>
+    <nav>
+        <ul>
+            <li><a href="catalog.html" class="button">Каталог</a></li>
+            <li><a href="basket.html" class="button">Корзина</a></li>
+            <li><a href="booking.html" class="button">Бронирование</a></li>
+            <li><a href="reviews.html" class="button">Отзывы</a></li>
+        </ul>
+    </nav>
+    <a href="authorization.html" class="button">Авторизация</a>
+</header>
+<main>
+    <div class="three-one-container">
+        <article class="major-description">
+            <h2 class="section-name" lang="en">Blossom</h2>
+            <p>Сеть ресторанов с уникальным оформлением залов живыми цветами от нашего партнёра <span lang="en">"Blossom-flowers"</span>.</p>
+            <p>Насладитесь изысканными блюдами от лучших поваров, погрузившись в атмосферу цветущего сада или тропического леса.</p>
+            <blockquote>
+                <q>Нет любви более искренней, чем любовь к еде</q>
+                <cite>— Бернард Шоу</cite>
+            </blockquote>
+        </article>
+        <section class="addresses">
+            <h3>Наши филиалы:</h3>
+            <ul>
+                <li class="address-item">
+                    <a href="booking.html" lang="en">Blossom - Garden of Eden</a>
+                    <p>СПБ, ул.Глинки, д.2</p>
+                    <p>м. Сенная площадь</p>
+                    <p>м. Адмиралтейская</p>
+                    <p>Телефон: +7(123)456-78-90</p>
+                </li>
+                <li class="address-item">
+                    <a href="booking.html" lang="en">Blossom - Rainforest</a>
+                    <p>СПБ, Каменноостровский просп., д.47</p>
+                    <p>м. Петроградская</p>
+                    <p>Телефон: +7(123)456-78-91</p>
+                </li>
+                <li class="address-item">
+                    <a href="booking.html" lang="en">Blossom - Desert Rose</a>
+                    <p>СПБ, наб. реки Смоленки, д.33</p>
+                    <p>м. Приморская</p>
+                    <p>Телефон: +7(123)456-78-92</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <section class="catalog-examples">
+        <h2 class="section-name">Каталог</h2>
+        <ul>
+            <li class="dish-item">
+                <img src="htdocs/img/meals/Ratatouille.png" alt="Фото блюда 'Рататуй'">
+                <p class="dish-name">Рататуй</p>
+                <p>Классический рататуй из фермерских овощей в прованских травах.</p>
+                <p>Томаты, кабачки, баклажаны, чеснок, смесь трав.</p>
+                <p><em>Подходит для вегетарианцев.</em></p>
+                <p><strong>400 руб</strong></p>
+            </li>
+            <li class="dish-item">
+                <img src="htdocs/img/meals/Steak_with_asparagus.png" alt="Фото блюда 'Стейк со спаржей'">
+                <p class="dish-name">Стейк со спаржей</p>
+                <p>Стейк рибай желаемой вами обжарки с ошпаренной на раскаленном масле спаржей.</p>
+                <p>Говядина, спаржа.</p>
+                <p><strong>750 руб</strong></p>
+            </li>
+            <li class="dish-item">
+                <img src="htdocs/img/meals/Mushroom_soup.png" alt="Фото блюда 'Грибной крем-суп в хлебной тарелке'">
+                <p class="dish-name">Грибной крем-суп в хлебной тарелке</p>
+                <p>Нежный крем-суп из шампиньонов в тарелке из свежеиспеченного овсяного хлеба.</p>
+                <p>Шампиньоны, картофель, лук, морковь, сливки, овсяный хлеб.</p>
+                <p><em>Подходит для вегетарианцев.</em></p>
+                <p><strong>375 руб</strong></p>
+            </li>
+        </ul>
+        <aside class="catalog-button">
+            <a href="catalog.html" class="button">ПЕРЕЙТИ В КАТАЛОГ</a>
+        </aside>
+    </section>
+    <div class="faq-reception-container">
+        <section class="faq">
+            <h3>FAQ</h3>
+            <ol class="faq-list">
+                <li class="faq-item">
+                    <h4>Есть ли у ресторана доставка?</h4>
+                    <p>Да. Наш ресторан занимается доставкой по всему городу. Вы можете оформить заказ через раздел <a href="catalog.html">"Каталог"</a></p>
+                </li>
+                <li class="faq-item">
+                    <h4>Можно ли забронировать зал для мероприятия?</h4>
+                    <p>Да. В нашем ресторане проводятся мероприятия. Вы можете забронировать зал через раздел <a href="booking.html">"Бронирование"</a></p>
+                </li>
+                <li class="faq-item">
+                    <h4>Создана ли у ресторана инфраструктура для маломобильных людей?</h4>
+                    <p>Да. В ресторане имеются пандусы, кнопки вызова помощи, специализированные санузлы, заниженные столы и обученный персонал.</p>
+                </li>
+            </ol>
+        </section>
+        <aside class="reception-photo">
+            <img src="htdocs/img/halls/Reception.png" alt="Фото ресепшена ресторана">
+        </aside>
+    </div>
+    <section class="delivery-info">
+        <h2>ИНФОРМАЦИЯ ПО ДОСТАВКЕ</h2>
+        <ol class="delivery-info-list">
+            <li class="delivery-info-item">
+                <img src="htdocs/img/delivery/food_basket.jpg" alt="Фото продуктовой корзины">
+                <p>Добавьте желаемые блюда в корзину.</p>
+                <p>Выберите время и адрес для получения заказа.</p>
+                <sup>*Доставка осуществляется только по СПБ и только в текущий день.</sup>
+                <sup>**Стоимость доставки для заказа суммой <2000 руб - 200 руб.</sup>
+                <sup>**Стоимость доставки для заказа суммой >=2000 руб - 0 руб.</sup>
+            </li>
+            <li class="delivery-info-item">
+                <img src="htdocs/img/delivery/card.jpg" alt="Фото банковской карты">
+                <p>Выберите способ оплаты.</p>
+                <p>При выборе оплаты на сайте привяжите карту, используя реквизиты.</p>
+            </li>
+            <li class="delivery-info-item">
+                <img src="htdocs/img/delivery/cook.jpg" alt="Фото повара">
+                <p>Ваш заказ с любовью приготовят к указанному времени наши повара.</p>
+            </li>
+            <li class="delivery-info-item">
+                <img src="htdocs/img/delivery/car.jpg" alt="Фото грузовой машины">
+                <p>Курьер аккуратно привезёт заказ на указанный вами адрес точно в срок.</p>
+                <p>Вам останется только забрать его и насладиться едой.</p>
+                <p>Приятного аппетита!</p>
+            </li>
+        </ol>
+    </section>
+</main>
+<footer class="contacts">
+    <nav>
+        <ul>
+            <li>
+                <a href="https://t.me/rest_blossom"><img src="htdocs/img/logos/telegram.png" alt="Значок-ссылка на Телеграм" class="contacts"></a>
+            </li>
+            <li>
+                <a href="https://vk.com/rest.blossom"><img src="htdocs/img/logos/vk.png" alt="Значок-ссылка на ВКонтакте" class="contacts"></a>
+            </li>
+            <li>
+                <a href="mailto:rest_blossom@mail.ru"><img src="htdocs/img/logos/mail.png" alt="Значок-ссылка на электронную почту" class="contacts"></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/rest_blossom"><img src="htdocs/img/logos/instagram.png" alt="Значок-ссылка на Инстаграм" class="contacts"></a>
+            </li>
+        </ul>
+    </nav>
+    <section class="opening-hours">
+        <p><strong>Часы работы ресторана:</strong></p>
+        <p><em>ПН-ПТ:</em>10:00-22:00</p>
+        <p><em>СБ-ВС:</em>8:00-00:00</p>
+    </section>
+    <p>Телефон головного офиса: +7(123)456-78-99</p>
+    <p lang="en" class="basement">Copyright &copy; 2025 "Blossom". All rights reserved.</p>
+</footer>
+</body>
+</html>

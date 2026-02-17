@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title lang="en">Blossom</title>
+  <meta name="description" content="Официальный сайт ресторана Blossom.">
+  <meta name="keywords" content="ресторан, банкетный зал, блюда, купить еду, забронировать столик">
+  <meta name="author" content="Филевская Анастасия">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/catalog.css">
+  <link rel="stylesheet" href="styles/media.css">
+  <script src="scripts/common.js"></script>
+</head>
+<body>
+<header>
+  <a href="major.html"><img src="htdocs/img/logos/Logo.png" alt="Логотип"></a>
+  <form action="/search" method="get">
+    <label><input type="text" name="sp" placeholder="Поиск..."><span class="sr-only">Поиск по сайту</span></label>
+    <button type="submit">Найти</button>
+  </form>
+  <nav>
+    <ul>
+      <li><a href="catalog.html" class="button">Каталог</a></li>
+      <li><a href="basket.html" class="button">Корзина</a></li>
+      <li><a href="booking.html" class="button">Бронирование</a></li>
+      <li><a href="reviews.html" class="button">Отзывы</a></li>
+    </ul>
+  </nav>
+  <a href="authorization.html" class="button">Авторизация</a>
+</header>
+<main>
+  <section class="catalog-description">
+    <h1>Каталог блюд нашего ресторана</h1>
+  </section>
+  <ul class="dish-categories">
+    <li>
+      <section class="menu">
+        <h2 class="section-name">Первые блюда</h2>
+        <ul>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Russian_borscht.png" alt="Фото блюда 'Русский борщ'"></button>
+            <p class="dish-name">Русский борщ</p>
+            <p>Традиционный красный русский борщ, украшенный сметаной и зеленью.</p>
+            <p>Свинина, говядина, морковь, капуста, лук репчатый, свёкла, картофель, томаты, сметана, зелень.</p>
+            <p class="price"><strong>400 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Mushroom_soup.png" alt="Фото блюда 'Грибной крем-суп в хлебной тарелке'"></button>
+            <p class="dish-name">Грибной крем-суп в хлебной тарелке</p>
+            <p>Нежный крем-суп из шампиньонов в тарелке из свежеиспеченного овсяного хлеба.</p>
+            <p>Шампиньоны, картофель, лук, морковь, сливки, овсяный хлеб.</p>
+            <p><em>Подходит для вегетарианцев.</em></p>
+            <p class="price"><strong>375 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Pea_soup.png" alt="Фото блюда 'Гороховый суп'"></button>
+            <p class="dish-name">Гороховый суп</p>
+            <p>Ароматный гороховый суп, украшенный сухарями, сметаной и зеленью.</p>
+            <p>Горох, лук, морковь, овсяный хлеб, сметана, зелень.</p>
+            <p><em>Подходит для вегетарианцев.</em></p>
+            <p class="price"><strong>350 руб</strong></p>
+          </li>
+        </ul>
+        <h2 class="section-name">Вторые блюда</h2>
+        <ul>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Steak_with_asparagus.png" alt="Фото блюда 'Стейк со спаржей'"></button>
+            <p class="dish-name">Стейк со спаржей</p>
+            <p>Стейк рибай желаемой вами обжарки с ошпаренной на раскаленном масле спаржей.</p>
+            <p>Говядина, спаржа.</p>
+            <p class="price"><strong>750 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Pasta_with_seafood.png" alt="Фото блюда 'Паста с морепродуктами'"></button>
+            <p class="dish-name">Паста с морепродуктами</p>
+            <p>Изысканная паста со свежими морепродуктами в сливочном соусе, украшенная зеленью.</p>
+            <p>Спагетти, креветки, кальмар, мидии, сливки, зелень.</p>
+            <p class="price"><strong>600 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Ratatouille.png" alt="Фото блюда 'Рататуй'"></button>
+            <p class="dish-name">Рататуй</p>
+            <p>Классический рататуй из фермерских овощей в прованских травах.</p>
+            <p>Томаты, кабачки, баклажаны, чеснок, смесь трав.</p>
+            <p><em>Подходит для вегетарианцев.</em></p>
+            <p class="price"><strong>400 руб</strong></p>
+          </li>
+        </ul>
+        <h2 class="section-name">Салаты</h2>
+        <ul>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Mimosa.png" alt="Фото блюда 'Салат Мимоза'"></button>
+            <p class="dish-name">Салат Мимоза</p>
+            <p>Нежный овощной салат Мимоза с морепродуктами и зеленью.</p>
+            <p>Картофель, морковь, куриные яйца, огурцы, креветки, мидии, кальмар, горбуша, зелень.</p>
+            <p class="price"><strong>550 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Cesar.png" alt="Фото блюда 'Салат Цезарь'"></button>
+            <p class="dish-name">Салат Цезарь</p>
+            <p>Классический салат Цезарь с пармезаном и обжаренным куриным филе.</p>
+            <p>Салат айсберг, курица, томаты, огурцы, овсяный хлеб, пармезан.</p>
+            <p class="price"><strong>450 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Eggplant_salad.png" alt="Фото блюда 'Салат с хрустящими баклажанами'"></button>
+            <p class="dish-name">Салат с хрустящими баклажанами</p>
+            <p>Теплый салат с обжаренными баклажанами и сыром Фета.</p>
+            <p>Баклажаны, томаты, сыр Фета, базилик, прованские травы.</p>
+            <p><em>Подходит для вегетарианцев.</em></p>
+            <p class="price"><strong>370 руб</strong></p>
+          </li>
+        </ul>
+        <h2 class="section-name">Десерты</h2>
+        <ul>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Chocolate_ganache.png" alt="Фото блюда 'Шоколадный ганаш'"></button>
+            <p class="dish-name">Шоколадный ганаш</p>
+            <p>Нежнейший ганаш из горького шоколада с шариком ванильного пломбира и брусничным джемом,
+              украшенный листиком мяты.</p>
+            <p>Горький шоколад, сливки, яйца, молоко, ваниль, брусника, сахар, какао, мята.</p>
+            <p class="price"><strong>430 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Chocolate_fondue.png" alt="Фото блюда 'Шоколадный фондан'"></button>
+            <p class="dish-name">Шоколадный фондан</p>
+            <p>Горячий фондан с топленым шоколадом внутри и шариком ванильного мороженого снаружи, украшенный
+              листиком мяты.</p>
+            <p>Горький шоколад, сливочное масло, сливки, яйца, молоко, сахар, ваниль, мята.</p>
+            <p class="price"><strong>380 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Meringue_cherry_roll.png" alt="Фото блюда 'Меренговый вишнёвый рулет'"></button>
+            <p class="dish-name">Меренговый вишнёвый рулет</p>
+            <p>Горячий фондан с топленым шоколадом внутри и шариком ванильного мороженого снаружи, украшенный
+              листиком мяты.</p>
+            <p>Вишня, сливочное масло, сливки, яйца, крахмал, сахар, ванилин.</p>
+            <p class="price"><strong>350 руб</strong></p>
+          </li>
+        </ul>
+        <h2 class="section-name">Безалкогольные напитки</h2>
+        <ul>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Cappuccino.png" alt="Фото блюда 'Капучино'"></button>
+            <p class="dish-name">Капучино</p>
+            <p>250 мл</p>
+            <p class="price"><strong>170 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Lingonberry_juice.png" alt="Фото блюда 'Морс из брусники'"></button>
+            <p class="dish-name">Морс из брусники</p>
+            <p>350 мл</p>
+            <p class="price"><strong>140 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Black_tea.png" alt="Фото блюда 'Чёрный чай с лимоном'"></button>
+            <p class="dish-name">Чёрный чай с лимоном</p>
+            <p>300 мл</p>
+            <p class="price"><strong>120 руб</strong></p>
+          </li>
+        </ul>
+        <h2 class="section-name">Алкогольные напитки</h2>
+        <ul>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/White_vine.png" alt="Фото напитка 'Белое вино'"></button>
+            <p class="dish-name">Белое вино</p>
+            <p><em>Sante Rive Soave, Cielo, 2021</em></p>
+            <p>125 мл | 750 мл</p>
+            <p class="price"><strong>370 руб | 2000 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Red_vine.png" alt="Фото напитка 'Красное вино'"></button>
+            <p class="dish-name">Красное вино</p>
+            <p><em>Burfield Shiraz, Australia, 2023</em></p>
+            <p>125 мл | 750 мл</p>
+            <p class="price"><strong>350 руб | 1850 руб</strong></p>
+          </li>
+          <li class="dish-item">
+            <button><img src="htdocs/img/meals/Mojito.png" alt="Фото напитка 'Мохито'"></button>
+            <p class="dish-name">Мохито</p>
+            <p><em>(коктейль на водке)</em></p>
+            <p>300 мл | 1000 мл</p>
+            <p class="price"><strong>250 руб | 900 руб</strong></p>
+          </li>
+        </ul>
+      </section>
+    </li>
+  </ul>
+</main>
+<footer class="contacts">
+  <nav>
+    <ul>
+      <li>
+        <a href="https://t.me/rest_blossom"><img src="htdocs/img/logos/telegram.png" alt="Значок-ссылка на Телеграм" class="contacts"></a>
+      </li>
+      <li>
+        <a href="https://vk.com/rest.blossom"><img src="htdocs/img/logos/vk.png" alt="Значок-ссылка на ВКонтакте" class="contacts"></a>
+      </li>
+      <li>
+        <a href="mailto:rest_blossom@mail.ru"><img src="htdocs/img/logos/mail.png" alt="Значок-ссылка на электронную почту" class="contacts"></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/rest_blossom"><img src="htdocs/img/logos/instagram.png" alt="Значок-ссылка на Инстаграм" class="contacts"></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="opening-hours">
+    <p><strong>Часы работы ресторана:</strong></p>
+    <p><em>ПН-ПТ:</em>10:00-22:00</p>
+    <p><em>СБ-ВС:</em>8:00-00:00</p>
+  </section>
+  <p>Телефон головного офиса: +7(123)456-78-99</p>
+  <p lang="en" class="basement">Copyright &copy; 2025 "Blossom". All rights reserved.</p>
+</footer>
+</body>
+</html>

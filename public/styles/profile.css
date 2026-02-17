@@ -1,0 +1,23 @@
+﻿.person-info {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--beige-color);
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(76, 61, 25, 0.15);
+}
+
+.person-info h1 {
+    margin-bottom: 20px;
+}
+
+.person-info form {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-info button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px 20px;
+    align-self: center;
+}
