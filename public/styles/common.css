@@ -354,8 +354,8 @@ section {
     box-shadow: 0 3px 8px rgba(76, 61, 25, 0.15);
 }
 
-.session-greeting {
-    color: var(--beige-color);
+.session-greeting, .session-greeting strong{
+    color: var(--bone-color);
 }
 
 article {
