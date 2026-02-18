@@ -354,6 +354,10 @@ section {
     box-shadow: 0 3px 8px rgba(76, 61, 25, 0.15);
 }
 
+.session-greeting {
+    color: var(--beige-color);
+}
+
 article {
     margin: 20px 0;
     padding: 18px;
