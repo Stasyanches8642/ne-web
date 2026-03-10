@@ -1,0 +1,19 @@
+<section class="review-form-section">
+    <h2>Добавить отзыв</h2>
+    <form action="/review" method="POST">
+        <label>Имя:
+            <input type="text" name="name" required minlength="2">
+        </label>
+        <label>Оценка (1–5):
+            <input type="number" name="rating" min="1" max="5" required>
+        </label>
+        <label>Дата визита:
+            <input type="date" name="visitDate">
+        </label>
+        <label>Комментарий:
+            <textarea name="text" required minlength="3" placeholder="Опишите качество еды, обслуживания и общие впечатления"></textarea>
+        </label>
+        <button type="submit">Сохранить отзыв</button>
+        <a href="/reviews" class="button">Отмена</a>
+    </form>
+</section>

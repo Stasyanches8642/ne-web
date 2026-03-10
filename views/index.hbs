@@ -13,17 +13,21 @@
         <ul>
             <li class="address-item">
                 <a href="/booking" lang="en">Blossom - Garden of Eden</a>
-                <p>СПБ, ул.Глинки, д.2</p><p>м. Сенная площадь</p><p>м. Адмиралтейская</p>
+                <p>СПБ, ул.Глинки, д.2</p>
+                <p>м. Сенная площадь</p>
+                <p>м. Адмиралтейская</p>
                 <p>Телефон: +7(123)456-78-90</p>
             </li>
             <li class="address-item">
                 <a href="/booking" lang="en">Blossom - Rainforest</a>
-                <p>СПБ, Каменноостровский просп., д.47</p><p>м. Петроградская</p>
+                <p>СПБ, Каменноостровский просп., д.47</p>
+                <p>м. Петроградская</p>
                 <p>Телефон: +7(123)456-78-91</p>
             </li>
             <li class="address-item">
                 <a href="/booking" lang="en">Blossom - Desert Rose</a>
-                <p>СПБ, наб. реки Смоленки, д.33</p><p>м. Приморская</p>
+                <p>СПБ, наб. реки Смоленки, д.33</p>
+                <p>м. Приморская</p>
                 <p>Телефон: +7(123)456-78-92</p>
             </li>
         </ul>
@@ -35,12 +39,12 @@
     <ul>
         {{#each featuredDishes}}
         <li class="dish-item">
-            <img src="/htdocs/img/meals/{{this.image}}" alt="Фото блюда '{{this.name}}'">
+            <img src="{{this.imageUrl}}" alt="Фото блюда '{{this.name}}'">
             <p class="dish-name">{{this.name}}</p>
             <p>{{this.description}}</p>
-            <p>{{this.ingredients}}</p>
-            {{#if this.vegetarian}}<p><em>Подходит для вегетарианцев.</em></p>{{/if}}
-            <p><strong>{{this.price}}</strong></p>
+            {{#if this.ingredients}}<p>{{this.ingredients}}</p>{{/if}}
+            {{#if this.isVegetarian}}<p><em>Подходит для вегетарианцев.</em></p>{{/if}}
+            <p><strong>{{this.price}} руб</strong></p>
         </li>
         {{/each}}
     </ul>
@@ -55,11 +59,11 @@
         <ol class="faq-list">
             <li class="faq-item">
                 <h4>Есть ли у ресторана доставка?</h4>
-                <p>Да. Вы можете оформить заказ через раздел <a href="/catalog">"Каталог"</a>.</p>
+                <p>Да. Наш ресторан занимается доставкой по всему городу. Вы можете оформить заказ через раздел <a href="/catalog">"Каталог"</a></p>
             </li>
             <li class="faq-item">
                 <h4>Можно ли забронировать зал для мероприятия?</h4>
-                <p>Да. Вы можете забронировать зал через раздел <a href="/booking">"Бронирование"</a>.</p>
+                <p>Да. В нашем ресторане проводятся мероприятия. Вы можете забронировать зал через раздел <a href="/booking">"Бронирование"</a></p>
             </li>
             <li class="faq-item">
                 <h4>Создана ли у ресторана инфраструктура для маломобильных людей?</h4>
@@ -80,6 +84,8 @@
             <p>Добавьте желаемые блюда в корзину.</p>
             <p>Выберите время и адрес для получения заказа.</p>
             <sup>*Доставка осуществляется только по СПБ и только в текущий день.</sup>
+            <sup>**Стоимость доставки для заказа суммой &lt;2000 руб - 200 руб.</sup>
+            <sup>**Стоимость доставки для заказа суммой &gt;=2000 руб - 0 руб.</sup>
         </li>
         <li class="delivery-info-item">
             <img src="/htdocs/img/delivery/card.jpg" alt="Фото банковской карты">
@@ -93,6 +99,8 @@
         <li class="delivery-info-item">
             <img src="/htdocs/img/delivery/car.jpg" alt="Фото грузовой машины">
             <p>Курьер аккуратно привезёт заказ на указанный вами адрес точно в срок.</p>
+            <p>Вам останется только забрать его и насладиться едой.</p>
+            <p>Приятного аппетита!</p>
         </li>
     </ol>
 </section>

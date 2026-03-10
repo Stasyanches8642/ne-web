@@ -1,12 +1,12 @@
 <section class="person-info">
     <h1>Личная информация</h1>
-    <form>
-        <p><label>Фамилия<input type="text" name="surname" placeholder="Иванов" value="{{user.surname}}" required></label></p>
-        <p><label>Имя<input type="text" name="name" placeholder="Иван" value="{{user.firstName}}" required></label></p>
-        <p><label>Отчество<input type="text" name="patronymic" placeholder="Иванович" value="{{user.patronymic}}"></label></p>
-        <p><label>Телефон<input type="tel" name="phone" placeholder="+79876543210" value="{{user.phone}}" required></label></p>
-        <p><label>Дата рождения<input type="date" name="birthday" value="{{user.birthday}}"></label></p>
-        <p><label>Email<input type="email" name="email" placeholder="Example@mail.ru" value="{{user.email}}"></label></p>
+    <form action="/profile" method="POST">
+        <p><label>Фамилия<input type="text" name="surname" placeholder="Иванов" required></label></p>
+        <p><label>Имя<input type="text" name="name" placeholder="Иван" required></label></p>
+        <p><label>Отчество<input type="text" name="patronymic" placeholder="Иванович"></label></p>
+        <p><label>Телефон<input type="tel" name="phone" placeholder="+79876543210" required></label></p>
+        <p><label>Дата рождения<input type="date" name="birthday"></label></p>
+        <p><label>Email<input type="email" name="email" placeholder="Example@mail.ru"></label></p>
         <button type="submit">Сохранить изменения</button>
     </form>
 </section>

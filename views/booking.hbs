@@ -1,52 +1,70 @@
 <article class="booking-description">
     <p>В нашем ресторане вы можете забронировать себе один из трех залов для проведения мероприятия.</p>
-    <p>Проведите незабываемую свадьбу в атмосфере абсолютной гармонии и единения с природой в зале Райского Сада,
+    <p>Проведите незабываемую свадьбу в атмосфере абсолютной гармонии и единения с природой в зале Райского Сада
         или устройте праздник своему ребёнку в стиле Древнего Египта в зале Розы Пустыни, или организуйте
         корпоратив на восьмое марта женской половине коллектива посреди благоухающего Тропического леса.</p>
     <p>Вам решать, где провести лучший праздник в вашей жизни, но мы поможем!</p>
 </article>
+
 <section class="addresses">
     <h3>Наши залы, доступные для бронирования:</h3>
     <ul>
-        {{#each halls}}
         <li class="address-item">
-            <img src="/htdocs/img/halls/{{this.image}}" alt="Зал '{{this.name}}'">
-            <h4 lang="en">{{this.nameEn}}</h4>
-            <p>{{this.address}}</p>
-            {{#each this.metro}}<p>м. {{this}}</p>{{/each}}
-            <p>Телефон: {{this.phone}}</p>
+            <img src="/htdocs/img/halls/Garden_Of_Eden_Hole.png" alt="Зал 'Райский сад'">
+            <h4 lang="en">Blossom - Garden of Eden</h4>
+            <p>СПБ, ул.Глинки, д.2</p>
+            <p>м. Сенная площадь</p>
+            <p>м. Адмиралтейская</p>
+            <p>Телефон: +7(123)456-78-90</p>
         </li>
-        {{/each}}
+        <li class="address-item">
+            <img src="/htdocs/img/halls/Rainforest_Hole.png" alt="Зал 'Тропический лес'">
+            <h4 lang="en">Blossom - Rainforest</h4>
+            <p>СПБ, Каменноостровский просп., д.47</p>
+            <p>м. Петроградская</p>
+            <p>Телефон: +7(123)456-78-91</p>
+        </li>
+        <li class="address-item">
+            <img src="/htdocs/img/halls/Desert_Rose_Hole.png" alt="Зал 'Роза пустыни'">
+            <h4 lang="en">Blossom - Desert Rose</h4>
+            <p>СПБ, наб. реки Смоленки, д.33</p>
+            <p>м. Приморская</p>
+            <p>Телефон: +7(123)456-78-92</p>
+        </li>
     </ul>
 </section>
+
 <section class="booking-info">
     <h2>Информация по бронированию:</h2>
     <p>Бронирование зала возможно не позднее чем за 3 дня до мероприятия.</p>
     <ins>Стоимость:</ins>
     <ul>
-        <li><p>Утром (10:00-16:00) или вечером (16:00-22:00) — 5000 руб.</p></li>
-        <li><p>Полный день — 10000 руб.</p></li>
+        <li><p>Утром (10:00-16:00) или вечером (16:00-22:00) - 5000 руб.</p></li>
+        <li><p>Полный день - 10000 руб.</p></li>
     </ul>
     <sup>*Стоимость аренды без учёта еды и напитков.</sup>
 </section>
+
 <section class="schedule">
     <div class="halls-selection">
         <h1>Выберите зал:</h1>
-        {{#each halls}}
-        <button>{{this.nameEn}}</button>
-        {{/each}}
+        <button>Blossom - Garden of Eden</button>
+        <button>Blossom - Rainforest</button>
+        <button>Blossom - Desert Rose</button>
     </div>
     <section class="schedule-container">
         <nav>
             <button>&lt; Предыдущий месяц</button>
-            <p>Сентябрь 2025</p>
+            <p id="currentMonthLabel">Сентябрь 2025</p>
             <button>Следующий месяц &gt;</button>
         </nav>
         <table>
             <thead>
-                <tr><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th></tr>
+            <tr>
+                <th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th>
+            </tr>
             </thead>
-            <tbody><!-- Заполняется через common.js --></tbody>
+            <tbody></tbody>
         </table>
     </section>
     <div class="info-reservation">
@@ -54,6 +72,7 @@
         <p>Выбранный зал: Blossom - Garden of Eden</p>
     </div>
 </section>
+
 <form action="" method="get">
     <p><label for="surname">Фамилия:</label><input type="text" id="surname" required></p>
     <p><label for="name">Имя:</label><input type="text" id="name" required></p>

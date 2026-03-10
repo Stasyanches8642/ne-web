@@ -1,14 +1,24 @@
 <section class="catalog-description">
     <h1>Каталог блюд нашего ресторана</h1>
 </section>
+
 <ul class="dish-categories">
     <li>
         <section class="menu">
-            {{#each menuSections}}
-            <h2 class="section-name">{{this.title}}</h2>
+            {{#each categories}}
+            <h2 class="section-name">{{this.name}}</h2>
             <ul>
-                {{#each this.items}}
-                {{> dish-card}}
+                {{#each this.dishes}}
+                <li class="dish-item">
+                    {{#if this.imageUrl}}
+                    <button><img src="{{this.imageUrl}}" alt="Фото блюда '{{this.name}}'"></button>
+                    {{/if}}
+                    <p class="dish-name">{{this.name}}</p>
+                    <p>{{this.description}}</p>
+                    {{#if this.ingredients}}<p>{{this.ingredients}}</p>{{/if}}
+                    {{#if this.isVegetarian}}<p><em>Подходит для вегетарианцев.</em></p>{{/if}}
+                    <p class="price"><strong>{{this.price}} руб</strong></p>
+                </li>
                 {{/each}}
             </ul>
             {{/each}}
