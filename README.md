@@ -12,6 +12,10 @@
 http://localhost:3000/
 http://localhost:3000/?auth=true
 http://localhost:3000/?auth=false
+http://localhost:3000/reviews/add
+http://localhost:3000/reviews/1/edit
+
+https://m3314-filevskaya-backend.onrender.com
 ```
 
 ## Доменная модель — ресторан Blossom

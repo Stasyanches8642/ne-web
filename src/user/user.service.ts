@@ -15,6 +15,17 @@ export class UserService {
     return this.prisma.user.findUnique({ where: { id } });
   }
 
+  findUserReservations(id: number) {
+    return this.prisma.reservation.findMany({ where: { userId: id } });
+  }
+
+  findUserOrders(id: number) {
+    return this.prisma.order.findMany({
+      where: { userId: id },
+      include: { items: true },
+    });
+  }
+
   create(dto: CreateUserDto) {
     return this.prisma.user.create({ data: dto });
   }
