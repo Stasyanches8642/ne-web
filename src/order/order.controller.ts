@@ -5,12 +5,15 @@ import {
   Body,
   Patch,
   Param,
-  Delete, Render,
+  Delete,
+  Render,
 } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
+import { ApiExcludeController } from '@nestjs/swagger';
 
+@ApiExcludeController()
 @Controller('order')
 export class OrderController {
   constructor(private readonly orderService: OrderService) {}

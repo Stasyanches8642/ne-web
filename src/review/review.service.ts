@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { UpdateReviewDto } from './dto/update-review.dto';
@@ -29,7 +29,14 @@ export class ReviewService {
     dto: CreateReviewDto & { name?: string; [key: string]: unknown },
   ) {
     let userId = dto.userId;
-    if (!userId) {
+
+    if (userId) {
+      const userExists = await this.prisma.user.findUnique({
+        where: { id: userId },
+      });
+      if (!userExists)
+        throw new BadRequestException(`Пользователь с ID ${userId} не найден`);
+    } else {
       const guestName = (dto.name as string) || 'Гость';
       const guestEmail = `guest_${Date.now()}@blossom.local`;
       const user = await this.prisma.user.create({
@@ -39,11 +46,7 @@ export class ReviewService {
     }
 
     const review = await this.prisma.review.create({
-      data: {
-        rating: Number(dto.rating),
-        text: dto.text || null,
-        userId,
-      },
+      data: { rating: Number(dto.rating), text: dto.text || null, userId },
       include: { user: true },
     });
 

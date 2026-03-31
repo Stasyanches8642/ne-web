@@ -2,6 +2,7 @@ import { Controller, Get, Query } from '@nestjs/common';
 import { Render } from '@nestjs/common';
 import { DishService } from './dish/dish.service';
 import { ReviewService } from './review/review.service';
+import { ApiExcludeController } from '@nestjs/swagger';
 
 const MOCK_USER = {
   name: 'Анастасия',
@@ -41,6 +42,7 @@ function resolveUser(auth?: string) {
   return auth === 'true' ? MOCK_USER : null;
 }
 
+@ApiExcludeController()
 @Controller()
 export class AppController {
   constructor(
