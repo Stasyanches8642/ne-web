@@ -1,0 +1,240 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Категория блюд"""
+type CategoryType {
+  """Описание категории"""
+  description: String
+
+  """ID категории"""
+  id: Int!
+
+  """Название категории"""
+  name: String!
+}
+
+"""Данные для создания блюда"""
+input CreateDishInput {
+  """ID категории"""
+  categoryId: Int!
+
+  """Описание блюда"""
+  description: String
+
+  """URL изображения"""
+  imageUrl: String
+
+  """Состав блюда"""
+  ingredients: String
+
+  """Подходит ли для вегетарианцев"""
+  isVegetarian: Boolean
+
+  """Название блюда"""
+  name: String!
+
+  """Цена в рублях"""
+  price: Float!
+}
+
+"""Данные для создания отзыва"""
+input CreateReviewInput {
+  """Имя автора"""
+  name: String
+
+  """Оценка от 1 до 5"""
+  rating: Int!
+
+  """Текст отзыва"""
+  text: String
+
+  """ID пользователя"""
+  userId: Int
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+"""Список блюд с пагинацией"""
+type DishListType {
+  """Список блюд"""
+  data: [DishType!]!
+
+  """Количество на странице"""
+  limit: Int!
+
+  """Текущая страница"""
+  page: Int!
+
+  """Общее количество блюд"""
+  total: Int!
+}
+
+"""Блюдо в меню ресторана"""
+type DishType {
+  """Калорийность"""
+  calories: Int
+
+  """Категория блюда"""
+  category: CategoryType
+
+  """ID категории"""
+  categoryId: Int!
+
+  """Описание блюда"""
+  description: String
+
+  """ID блюда"""
+  id: Int!
+
+  """URL изображения"""
+  imageUrl: String
+
+  """Состав блюда"""
+  ingredients: String
+
+  """Доступно ли блюдо"""
+  isAvailable: Boolean!
+
+  """Подходит ли для вегетарианцев"""
+  isVegetarian: Boolean!
+
+  """Название блюда"""
+  name: String!
+
+  """Цена в рублях"""
+  price: Float!
+
+  """Вес в граммах"""
+  weight: Int
+}
+
+type Mutation {
+  """Добавить новое блюдо в меню"""
+  addDish(input: CreateDishInput!): DishType!
+
+  """Удалить блюдо"""
+  deleteDish(id: Int!): Boolean!
+
+  """Удалить отзыв"""
+  deleteReview(id: Int!): Boolean!
+
+  """Обновить текст или оценку отзыва"""
+  editReview(id: Int!, input: UpdateReviewInput!): ReviewType!
+
+  """Убрать блюдо из меню"""
+  hideDish(id: Int!): Boolean!
+
+  """Оставить новый отзыв о ресторане"""
+  leaveReview(input: CreateReviewInput!): ReviewType!
+
+  """Сделать блюдо доступным"""
+  showDish(id: Int!): Boolean!
+
+  """Обновить информацию о блюде"""
+  updateDish(id: Int!, input: UpdateDishInput!): DishType!
+}
+
+type Query {
+  """Получить все категории блюд"""
+  categories: [CategoryType!]!
+
+  """Получить блюдо по ID"""
+  dish(
+    """ID блюда"""
+    id: Int!
+  ): DishType
+
+  """Получить список всех блюд с пагинацией"""
+  dishes(
+    """Количество на странице"""
+    limit: Int! = 10
+
+    """Номер страницы"""
+    page: Int! = 1
+  ): DishListType!
+
+  """Получить отзыв по ID"""
+  review(id: Int!): ReviewType
+
+  """Получить список всех отзывов с пагинацией"""
+  reviews(limit: Int! = 10, page: Int! = 1): ReviewListType!
+}
+
+"""Список отзывов с пагинацией"""
+type ReviewListType {
+  """Список отзывов"""
+  data: [ReviewType!]!
+
+  """Количество на странице"""
+  limit: Int!
+
+  """Текущая страница"""
+  page: Int!
+
+  """Общее количество отзывов"""
+  total: Int!
+}
+
+"""Отзыв о ресторане"""
+type ReviewType {
+  """Дата создания отзыва"""
+  createdAt: DateTime!
+
+  """ID отзыва"""
+  id: Int!
+
+  """Оценка от 1 до 5"""
+  rating: Int!
+
+  """Текст отзыва"""
+  text: String
+
+  """Автор отзыва"""
+  user: UserType
+
+  """ID пользователя"""
+  userId: Int!
+}
+
+"""Данные для обновления блюда"""
+input UpdateDishInput {
+  """Доступно ли блюдо"""
+  isAvailable: Boolean
+
+  """Название блюда"""
+  name: String
+
+  """Цена в рублях"""
+  price: Float
+}
+
+"""Данные для обновления отзыва"""
+input UpdateReviewInput {
+  """Оценка от 1 до 5"""
+  rating: Int
+
+  """Текст отзыва"""
+  text: String
+}
+
+"""Пользователь"""
+type UserType {
+  """Email пользователя"""
+  email: String!
+
+  """ID пользователя"""
+  id: Int!
+
+  """Имя пользователя"""
+  name: String!
+
+  """Телефон пользователя"""
+  phone: String
+
+  """Роль пользователя"""
+  role: String!
+}
