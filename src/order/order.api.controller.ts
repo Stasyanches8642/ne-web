@@ -38,7 +38,7 @@ export class OrderApiController {
   async findAll(
     @Query('page') page = 1,
     @Query('limit') limit = 10,
-    @Res() res: Response,
+    @Res({ passthrough: true }) res: Response,
   ) {
     const pageNum = Number(page);
     const limitNum = Number(limit);

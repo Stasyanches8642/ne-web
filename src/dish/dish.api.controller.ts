@@ -10,7 +10,10 @@
   ParseIntPipe,
   HttpCode,
   HttpStatus,
+  NotFoundException,
   Res,
+  UseInterceptors,
+  Header,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -20,6 +23,7 @@ import {
   ApiParam,
 } from '@nestjs/swagger';
 import type { Response } from 'express';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 import { DishService } from './dish.service';
 import { CreateDishDto } from './dto/create-dish.dto';
 import { UpdateDishDto } from './dto/update-dish.dto';
@@ -30,14 +34,12 @@ export class DishApiController {
   constructor(private readonly dishService: DishService) {}
 
   @Get()
-  @ApiOperation({ summary: 'Получить список блюд с пагинацией' })
-  @ApiQuery({ name: 'page', required: false, example: 1 })
-  @ApiQuery({ name: 'limit', required: false, example: 10 })
-  @ApiResponse({ status: 200, description: 'Список блюд' })
+  @UseInterceptors(CacheInterceptor)
+  @Header('Cache-Control', 'public, max-age=3600')
   async findAll(
     @Query('page', new ParseIntPipe({ optional: true })) page = 1,
     @Query('limit', new ParseIntPipe({ optional: true })) limit = 10,
-    @Res() res: Response,
+    @Res({ passthrough: true }) res: Response,
   ) {
     const result = await this.dishService.findAll(page, limit);
     const totalPages = Math.ceil(result.total / limit);
@@ -50,7 +52,16 @@ export class DishApiController {
       links.push(`<${baseUrl}?page=${page + 1}&limit=${limit}>; rel="next"`);
     if (links.length) res.setHeader('Link', links.join(', '));
 
-    return res.json(result);
+    return result;
+  }
+
+  @Get('categories')
+  @UseInterceptors(CacheInterceptor)
+  @Header('Cache-Control', 'public, max-age=3600')
+  @ApiOperation({ summary: 'Получить все категории с блюдами' })
+  @ApiResponse({ status: 200, description: 'Список категорий' })
+  findAllCategories() {
+    return this.dishService.findAllCategories();
   }
 
   @Get(':id')
@@ -58,8 +69,10 @@ export class DishApiController {
   @ApiParam({ name: 'id', example: 1 })
   @ApiResponse({ status: 200, description: 'Блюдо найдено' })
   @ApiResponse({ status: 404, description: 'Блюдо не найдено' })
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.dishService.findOne(id);
+  async findOne(@Param('id', ParseIntPipe) id: number) {
+    const dish = await this.dishService.findOne(id);
+    if (!dish) throw new NotFoundException(`Блюдо с ID ${id} не найдено`);
+    return dish;
   }
 
   @Post()
@@ -74,7 +87,12 @@ export class DishApiController {
   @ApiOperation({ summary: 'Обновить блюдо' })
   @ApiResponse({ status: 200, description: 'Блюдо обновлено' })
   @ApiResponse({ status: 404, description: 'Блюдо не найдено' })
-  update(@Param('id', ParseIntPipe) id: number, @Body() dto: UpdateDishDto) {
+  async update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateDishDto,
+  ) {
+    const dish = await this.dishService.findOne(id);
+    if (!dish) throw new NotFoundException(`Блюдо с ID ${id} не найдено`);
     return this.dishService.update(id, dto);
   }
 
@@ -83,7 +101,9 @@ export class DishApiController {
   @ApiOperation({ summary: 'Удалить блюдо' })
   @ApiResponse({ status: 204, description: 'Блюдо удалено' })
   @ApiResponse({ status: 404, description: 'Блюдо не найдено' })
-  remove(@Param('id', ParseIntPipe) id: number) {
+  async remove(@Param('id', ParseIntPipe) id: number) {
+    const dish = await this.dishService.findOne(id);
+    if (!dish) throw new NotFoundException(`Блюдо с ID ${id} не найдено`);
     return this.dishService.remove(id);
   }
 }
