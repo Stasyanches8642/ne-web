@@ -2,41 +2,63 @@
     <h1><strong>Корзина</strong></h1>
     <h3>Проверьте состав заказа перед оформлением:</h3>
 </section>
+
 <section class="basket-items">
     <table>
         <caption>Выбранные товары</caption>
         <thead>
-            <tr><th>Блюдо</th><th>Количество</th><th>Сумма</th></tr>
+        <tr>
+            <th>Блюдо</th>
+            <th>Количество</th>
+            <th>Сумма</th>
+        </tr>
         </thead>
         <tbody>
-            {{#each basketItems}}
-            <tr>
-                <td>{{this.name}}</td>
-                <td>
-                    <button>-</button>
-                    <p>{{this.quantity}}</p>
-                    <button>+</button>
-                </td>
-                <td>{{this.total}} руб</td>
-            </tr>
-            {{/each}}
+        <tr>
+            <td>Грибной крем-суп в хлебной тарелке</td>
+            <td><button>-</button><p>1</p><button>+</button></td>
+            <td>375 руб</td>
+        </tr>
+        <tr>
+            <td>Салат Цезарь</td>
+            <td><button>-</button><p>2</p><button>+</button></td>
+            <td>900 руб</td>
+        </tr>
+        <tr>
+            <td>Белое вино "Sante Rive Soave" (бутылка - 750 мл)</td>
+            <td><button>-</button><p>1</p><button>+</button></td>
+            <td>2000 руб</td>
+        </tr>
         </tbody>
         <tfoot>
-            <tr><td colspan="2">ИТОГО:</td><td>{{basketTotal}} руб</td></tr>
+        <tr>
+            <td colspan="2">ИТОГО:</td>
+            <td>3275 руб</td>
+        </tr>
         </tfoot>
     </table>
 </section>
+
 <section class="order-summary">
     <table>
         <caption>Сумма заказа:</caption>
         <thead>
-            <tr><th>Товары ({{basketCount}})</th><th>Доставка</th><th>Итого</th></tr>
+        <tr>
+            <th>Товары (4)</th>
+            <th>Доставка</th>
+            <th>Итого</th>
+        </tr>
         </thead>
         <tbody>
-            <tr><td>{{basketTotal}} руб</td><td>{{deliveryCost}} руб</td><td>{{orderTotal}} руб</td></tr>
+        <tr>
+            <td>3275 руб</td>
+            <td>200 руб</td>
+            <td>3475 руб</td>
+        </tr>
         </tbody>
     </table>
 </section>
+
 <div class="delivery-payment-container">
     <section class="delivery-info">
         <h2>Доставка</h2>
@@ -48,13 +70,16 @@
             <label for="delivery-hour">Время доставки</label>
             <select id="delivery-hour" required>
                 <option value="">Часов</option>
-                <option>10</option><option>11</option><option>12</option><option>13</option>
-                <option>14</option><option>15</option><option>16</option><option>17</option>
-                <option>18</option><option>19</option><option>20</option><option>21</option><option>22</option>
+                <option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                <option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                <option value="16">16</option><option value="17">17</option><option value="18">18</option>
+                <option value="19">19</option><option value="20">20</option><option value="21">21</option>
+                <option value="22">22</option>
             </select>
             <select id="delivery-minute" required>
                 <option value="">Минут</option>
-                <option>00</option><option>15</option><option>30</option><option>45</option>
+                <option value="00">00</option><option value="15">15</option>
+                <option value="30">30</option><option value="45">45</option>
             </select>
             <p>
                 <label for="delivery-comment">Комментарий к доставке</label>
@@ -63,6 +88,7 @@
             <button type="submit">Сохранить адрес</button>
         </form>
     </section>
+
     <section class="payment-info">
         <h2>Выберите способ оплаты</h2>
         <form>
@@ -80,4 +106,5 @@
         </form>
     </section>
 </div>
+
 <button class="set-an-order">Оформить заказ</button>

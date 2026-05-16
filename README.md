@@ -12,4 +12,21 @@
 http://localhost:3000/
 http://localhost:3000/?auth=true
 http://localhost:3000/?auth=false
+http://localhost:3000/reviews/add
+http://localhost:3000/reviews/1/edit
+
+https://m3314-filevskaya-backend.onrender.com
 ```
+
+## Доменная модель — ресторан Blossom
+
+![ER-диаграмма](./er-diagram.png)
+
+### Сущности
+- **Category** — категории блюд (первые блюда, салаты, десерты и т.д.)
+- **Dish** — блюда меню с ценой, описанием и привязкой к категории
+- **User** — пользователи с ролями CUSTOMER и ADMIN
+- **Reservation** — бронирования залов с датой, количеством гостей и выбором зала
+- **Order** — заказы пользователей со статусом и итоговой суммой
+- **OrderItem** — позиции внутри заказа (блюдо + количество + цена на момент заказа)
+- **Review** — отзывы пользователей с рейтингом от 1 до 5

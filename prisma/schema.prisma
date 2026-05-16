@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique
+  description String?
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  dishes Dish[]
+}
+
+model Dish {
+  id           Int      @id @default(autoincrement())
+  name         String
+  description  String?
+  price        Decimal  @db.Decimal(10, 2)
+  ingredients  String?
+  isVegetarian Boolean  @default(false)
+  imageUrl     String?
+  isAvailable  Boolean  @default(true)
+  weight       Int? // в граммах
+  calories     Int?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  orderItems OrderItem[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
+  phone     String?
+  avatarUrl String?
+  role      Role     @default(CUSTOMER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reservations Reservation[]
+  orders       Order[]
+  reviews      Review[]
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
+
+model Reservation {
+  id              Int               @id @default(autoincrement())
+  date            DateTime
+  guestsCount     Int
+  hall            Hall              @default(GARDEN_OF_EDEN)
+  specialRequests String?
+  status          ReservationStatus @default(PENDING)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+}
+
+enum Hall {
+  GARDEN_OF_EDEN
+  RAINFOREST
+  DESERT_ROSE
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  totalPrice Decimal     @db.Decimal(10, 2)
+  status     OrderStatus @default(PENDING)
+  comment    String?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  items OrderItem[]
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PREPARING
+  READY
+  DELIVERED
+  CANCELLED
+}
+
+model OrderItem {
+  id       Int     @id @default(autoincrement())
+  quantity Int
+  price    Decimal @db.Decimal(10, 2) // цена на момент заказа
+
+  orderId Int
+  order   Order @relation(fields: [orderId], references: [id])
+
+  dishId Int
+  dish   Dish @relation(fields: [dishId], references: [id])
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int // 1–5 (как звёзды)
+  text      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+}
